@@ -161,7 +161,7 @@
         <div id="container">
           <div id="row">
             <!-- First Row -->
-            <div class="col-md-3" id="col"></div>
+            <div class="row-md-3" id="col"></div>
           </div>
         </div>
         <script>
@@ -175,6 +175,7 @@
             for (var i = 0; i < data.length; i++) {
               let card = document.createElement('div');
               card.className = 'card';
+              card.style = 'width: 18rem;';
               card.id = 'card';
 
               let img = document.createElement('img');
@@ -186,7 +187,7 @@
 
               let cardTitle = document.createElement('h5');
               cardTitle.className = 'card-title';
-              cardTitle.innerHTML = `TITLE: ${data[i].title}`;
+              cardTitle.innerHTML = `${data[i].title}`;
 
               let cardText = document.createElement('p');
               cardText.className = 'card-text';
@@ -223,10 +224,13 @@
 
     <footer id="footer" class="container-fluid text-center">
       <h2>Footer</h2>
-      <p>The color of the text will change to blue when you see me</p>
-      <div class="container">
+      <p>User with Zip Code that starts with 5</p>
+      <ul class="zipFive">
+        <li id="zip-five"></li>
+      </ul>
+      <!-- <div class="container">
         <div class="row">
-          <!-- First Row -->
+           First Row
           <div class="col-md-3">
             <div class="card">
               <div class="card-body">Card 1</div>
@@ -250,7 +254,7 @@
         </div>
 
         <div class="row">
-          <!-- Second Row -->
+          Second Row 
           <div class="col-md-3">
             <div class="card">
               <div class="card-body">Card 5</div>
@@ -272,7 +276,7 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
     </footer>
 
     <script>

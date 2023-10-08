@@ -3,7 +3,7 @@ body {
   line-height: 1.8;
   color: #818181;
 }
-h1{
+h1 {
   color: yellow;
 }
 h2 {
@@ -38,7 +38,11 @@ h2 {
   margin: 0%;
   border-radius: 25px;
 }
-.listName{
+.listName {
+  list-style: none;
+  text-align: center;
+}
+.zip5User {
   list-style: none;
   text-align: center;
 }

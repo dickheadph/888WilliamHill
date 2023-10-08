@@ -11,8 +11,6 @@ window.onload = () => {
     //convert raw data into a json object
     const data = await listOfUsers.json();
 
-    //console.log(data[randomNum].name);
-
     document.getElementById('user').innerText = `${data[randomNum].name}`;
     let text = '';
     if (data === '') {
@@ -33,16 +31,37 @@ window.onload = () => {
         const container = document.getElementById('person-list');
         // Append the list item to the container
         container.appendChild(listItem);
+
+        //checj user with zip code that starts with 5
+        const zipCode = user.address.zipcode;
+        if (zipCode.startsWith('5' || zipCode.startsWith(5))) {
+          //console.log(user.name);
+          const zipFiveList = document.createElement('li');
+          zipFiveList.className = 'zip5User';
+          zipFiveList.textContent = `${user.name}`;
+
+          const container = document.getElementById('zip-five');
+          // Append the list item to the container
+          container.appendChild(zipFiveList);
+        }
+        //list of users
       });
-      //const names = [];
 
-      //   for (const nameOfPerson of pipol) {
-      //     const obj = {
-      //       name: nameOfPerson.name,
-      //     };
-
-      //     names.push(obj);
-      //   }
+      //sort user names
+      let newListOfNames = [];
+      data.forEach((user) => {
+        const userNames = {
+          id: user.id,
+          name: user.name,
+          email: user.email,
+        };
+        //const sortedName = newListOfNames.sort();
+        newListOfNames.push(userNames);
+      });
+      console.log(newListOfNames.sort());
+      //   newListOfNames.map((names) => {
+      //     console.log(names.name);
+      //   });
     }
   });
 };
