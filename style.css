@@ -125,6 +125,11 @@ footer .glyphicon {
   }
 }
 
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 150px;
+  }
+}
 @media screen and (max-width: 640px) {
   .test {
     position: relative;
@@ -140,7 +145,12 @@ footer .glyphicon {
     background-image: url(/images/image1.jpg);
   }
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
+  .test {
+    float: left;
+    margin: 0px 0px 0px 10px;
+    text-align: left;
+  }
   .col-sm-4 {
     text-align: center;
     margin: 25px 0;
@@ -150,8 +160,10 @@ footer .glyphicon {
     margin-bottom: 35px;
   }
 }
-@media screen and (max-width: 480px) {
-  .logo {
-    font-size: 150px;
+@media screen and (max-width: 1025px) {
+  .test {
+    float: left;
+    margin: 0px 0px 0px 40px;
+    text-align: left;
   }
 }
