@@ -1,0 +1,11 @@
+Hi Assessor,
+
+Please check the live link here @: https://888-william-hill.vercel.app/
+You can also check the official gh repo on this link: https://github.com/dickheadph/888WilliamHill.git
+
+Please be informed that I fail to finish the 2 task namely the card as and the sorting of user details alphabetically.
+
+Thanks.
+
+Regards,
+Shan
