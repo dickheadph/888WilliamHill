@@ -3,6 +3,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>Webmaster test</title>
+    <link rel="icon" href="/images/888.png" type="image/x-icon" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./files/bootstrap.min.css" />
     <link rel="stylesheet" href="style.css" />
@@ -82,6 +83,7 @@
           thumbnailUrl: 'https://via.placeholder.com/150/197d29',
         },
       ];
+      const firstEight = dataArray.slice(0, 8);
     </script>
   </head>
 
@@ -155,10 +157,12 @@
     <div id="promotions" class="container-fluid text-center">
       <h2>Promotions</h2>
       <h4>What we offer</h4>
-      <div id="container">
-        <div id="row">
-          <!-- First Row -->
-          <div class="col-md-3" id="col"></div>
+      <div>
+        <div id="container">
+          <div id="row">
+            <!-- First Row -->
+            <div class="col-md-3" id="col"></div>
+          </div>
         </div>
       </div>
       <script>
@@ -169,27 +173,25 @@
             console.error("'wrapper' id can't be not found.");
             return; // Exit the function
           }
-          const firstEight = data.slice(0, 8);
-          console.log(firstEight);
-          for (var i = 0; i < firstEight.length; i++) {
+          for (var i = 0; i < data.length; i++) {
             let card = document.createElement('div');
             card.className = 'card';
             card.id = 'card';
 
             let img = document.createElement('img');
             img.className = 'card-img-top';
-            img.src = `${firstEight[i].thumbnailUrl}`;
+            img.src = `${data[i].thumbnailUrl}`;
 
             let cardBody = document.createElement('div');
             cardBody.className = 'card-body';
 
             let cardTitle = document.createElement('h5');
             cardTitle.className = 'card-title';
-            cardTitle.innerHTML = `TITLE: ${firstEight[i].title}`;
+            cardTitle.innerHTML = `TITLE: ${data[i].title}`;
 
             let cardText = document.createElement('p');
             cardText.className = 'card-text';
-            cardText.innerHTML = `${firstEight[i].body}`;
+            cardText.innerHTML = `${data[i].body}`;
 
             let anchor = document.createElement('a');
             anchor.className = 'btn btn-primary';
@@ -205,14 +207,15 @@
           }
         }
 
-        appendData(dataArray);
+        appendData(firstEight);
       </script>
     </div>
 
     <div id="usersList" class="container-fluid text-center bg-grey">
       <h2>Users</h2>
-      <h4 class="" id="generate">Please click 'Get username' to generate list of users. Thank you.</h4>
-      <p></p>
+      <h4 class="" id="generate">
+        Please click 'Get username' to generate list of users. Thank you.
+      </h4>
       <ul class="people">
         <li id="person-list"></li>
       </ul>

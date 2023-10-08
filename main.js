@@ -27,6 +27,7 @@ window.onload = () => {
       //document.location.reload();
       data.map((user) => {
         const listItem = document.createElement('li');
+        listItem.className = 'listName';
         listItem.textContent = `${user.name}`;
 
         const container = document.getElementById('person-list');
