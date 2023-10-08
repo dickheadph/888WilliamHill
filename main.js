@@ -51,14 +51,21 @@ window.onload = () => {
       let newListOfNames = [];
       data.forEach((user) => {
         const userNames = {
-          id: user.id,
           name: user.name,
           email: user.email,
         };
         //const sortedName = newListOfNames.sort();
         newListOfNames.push(userNames);
       });
-      console.log(newListOfNames.sort());
+      // Convert the JSON object into an array of key-value pairs
+      // const keyValueArray = Object.entries(newListOfNames);
+
+      // // Sort the array based on values (alphabetically)
+      // keyValueArray.sort((a, b) => a[1].localeCompare(b[1]));
+
+      // // Convert the sorted array back into a JSON object
+      // const sortedJsonObject = Object.fromEntries(keyValueArray);
+      // console.log(sortedJsonObject);
       //   newListOfNames.map((names) => {
       //     console.log(names.name);
       //   });
