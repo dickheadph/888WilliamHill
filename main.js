@@ -14,10 +14,16 @@ window.onload = () => {
     //console.log(data[randomNum].name);
 
     document.getElementById('user').innerText = `${data[randomNum].name}`;
-
+    let text = '';
     if (data === '') {
+      text = document.getElementById(
+        'generate'
+      ).innerText = `Please click 'Get username' to generate list of users. Thank you.`;
       return null;
     } else {
+      text = document.getElementById(
+        'generate'
+      ).innerText = `Official list of users.`;
       //document.location.reload();
       data.map((user) => {
         const listItem = document.createElement('li');
