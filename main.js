@@ -38,7 +38,7 @@ window.onload = () => {
           //console.log(user.name);
           const zipFiveList = document.createElement('li');
           zipFiveList.className = 'zip5User';
-          zipFiveList.textContent = `${user.name}`;
+          zipFiveList.textContent = `${user.name} (${user.address.zipcode})`;
 
           const container = document.getElementById('zip-five');
           // Append the list item to the container
