@@ -10,8 +10,9 @@ window.onload = () => {
     );
     //convert raw data into a json object
     const data = await listOfUsers.json();
-
+    //Display random User
     document.getElementById('user').innerText = `${data[randomNum].name}`;
+
     let text = '';
     if (data === '') {
       text = document.getElementById(
@@ -22,53 +23,47 @@ window.onload = () => {
       text = document.getElementById(
         'generate'
       ).innerText = `Official list of users.`;
-      //document.location.reload();
-      data.map((user) => {
-        const listItem = document.createElement('li');
-        listItem.className = 'listName';
-        listItem.textContent = `${user.name}`;
+      //Display all reggistered user
+      const displayUSers = (data) => {
+        data.map((user) => {
+          const listItem = document.createElement('li');
+          listItem.className = 'listName';
+          listItem.textContent = `${user.name}`;
 
-        const container = document.getElementById('person-list');
-        // Append the list item to the container
-        container.appendChild(listItem);
-
-        //checj user with zip code that starts with 5
-        const zipCode = user.address.zipcode;
-        if (zipCode.startsWith('5' || zipCode.startsWith(5))) {
-          //console.log(user.name);
-          const zipFiveList = document.createElement('li');
-          zipFiveList.className = 'zip5User';
-          zipFiveList.textContent = `${user.name} (${user.address.zipcode})`;
-
-          const container = document.getElementById('zip-five');
+          const container = document.getElementById('person-list');
           // Append the list item to the container
-          container.appendChild(zipFiveList);
-        }
-        //list of users
-      });
+          container.appendChild(listItem);
 
+          //check user with zip code that starts with 5
+          const zipCode = user.address.zipcode;
+          if (zipCode.startsWith('5' || zipCode.startsWith(5))) {
+            //console.log(user.name);
+            const zipFiveList = document.createElement('li');
+            zipFiveList.className = 'zip5User';
+            zipFiveList.textContent = `${user.name} (${user.address.zipcode})`;
+
+            const container = document.getElementById('zip-five');
+            // Append the list item to the container
+            container.appendChild(zipFiveList);
+          }
+          //list of users
+        });
+      };
+      displayUSers(data);
       //sort user names
-      let newListOfNames = [];
-      data.forEach((user) => {
-        const userNames = {
-          name: user.name,
-          email: user.email,
-        };
-        //const sortedName = newListOfNames.sort();
-        newListOfNames.push(userNames);
-      });
-      // Convert the JSON object into an array of key-value pairs
-      // const keyValueArray = Object.entries(newListOfNames);
-
-      // // Sort the array based on values (alphabetically)
-      // keyValueArray.sort((a, b) => a[1].localeCompare(b[1]));
-
-      // // Convert the sorted array back into a JSON object
-      // const sortedJsonObject = Object.fromEntries(keyValueArray);
-      // console.log(sortedJsonObject);
-      //   newListOfNames.map((names) => {
-      //     console.log(names.name);
-      //   });
+      const sotUserNames = (data) => {
+        let newListOfNames = [];
+        data.forEach((user) => {
+          const userNames = {
+            name: user.name,
+            email: user.email,
+          };
+          //const sortedName = newListOfNames.sort();
+          newListOfNames.push(userNames);
+        });
+        //console.log(newListOfNames);
+      };
+      sotUserNames(data);
     }
   });
 };
